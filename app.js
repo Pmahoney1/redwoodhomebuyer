@@ -209,6 +209,7 @@
     if (rect.top < window.innerHeight && rect.bottom > 0) {
       hasAnimated = true;
       trustValues.forEach(function (el) {
+        if (el.hasAttribute('data-no-animate')) return;
         var text = el.textContent;
         animateValue(el, text, 800);
       });
