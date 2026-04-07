@@ -130,21 +130,18 @@
 
   // ---- Lead Form Submission ----
   // Sends data to Go High Level via webhook
-  var form = document.getElementById('offer-form');
-  var formSuccess = document.getElementById('form-success');
+  // Handles both hero form and bottom CTA form
+  var GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
+  function handleFormSubmit(formEl, successEl) {
+    if (!formEl) return;
+    formEl.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Basic validation
-      var name = document.getElementById('full-name');
-      var address = document.getElementById('property-address');
-      var email = document.getElementById('email');
-      var phone = document.getElementById('phone');
+      var inputs = formEl.querySelectorAll('input[required]');
       var isValid = true;
 
-      [name, address, email, phone].forEach(function (input) {
+      inputs.forEach(function (input) {
         if (!input.value.trim()) {
           input.style.borderColor = 'var(--color-primary)';
           isValid = false;
@@ -157,18 +154,14 @@
 
       // Prepare form data for Go High Level webhook
       var formData = new FormData();
-      formData.append('full_name', name.value.trim());
-      formData.append('property_address', address.value.trim());
-      formData.append('email', email.value.trim());
-      formData.append('phone', phone.value.trim());
+      formData.append('full_name', formEl.querySelector('[name="full_name"]').value.trim());
+      formData.append('property_address', formEl.querySelector('[name="property_address"]').value.trim());
+      formData.append('email', formEl.querySelector('[name="email"]').value.trim());
+      formData.append('phone', formEl.querySelector('[name="phone"]').value.trim());
       formData.append('source', 'Redwood Real Estate Website');
 
       // Send to Go High Level webhook
       // Replace YOUR_GHL_WEBHOOK_URL with your actual Go High Level inbound webhook URL
-      // To find this: Go High Level → Automation → Workflows → Create Workflow → 
-      // Add Trigger → Inbound Webhook → Copy the webhook URL
-      var GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
-
       if (GHL_WEBHOOK_URL !== 'YOUR_GHL_WEBHOOK_URL') {
         fetch(GHL_WEBHOOK_URL, {
           method: 'POST',
@@ -178,9 +171,9 @@
         });
       }
 
-      // Show success state regardless (better UX)
-      form.style.display = 'none';
-      if (formSuccess) formSuccess.classList.add('is-visible');
+      // Show success state
+      formEl.style.display = 'none';
+      if (successEl) successEl.classList.add('is-visible');
 
       // Track conversion event for Google/Meta ads
       if (typeof gtag === 'function') {
@@ -198,6 +191,17 @@
     });
   }
 
+  // Hero form
+  handleFormSubmit(
+    document.getElementById('offer-form-hero'),
+    document.getElementById('form-success-hero')
+  );
+  // Bottom CTA form
+  handleFormSubmit(
+    document.getElementById('offer-form'),
+    document.getElementById('form-success')
+  );
+
   // ---- Smooth Scroll for Anchor Links ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -209,50 +213,6 @@
     });
   });
 
-  // ---- Animate Trust Numbers on Scroll ----
-  function animateValue(el, end, duration) {
-    var start = 0;
-    var startTime = null;
-    var numericEnd = parseInt(end.replace(/[^0-9]/g, ''), 10);
-    var suffix = end.replace(/[0-9]/g, '');
-    var prefix = end.match(/^\D+/) ? end.match(/^\D+/)[0] : '';
 
-    if (isNaN(numericEnd)) {
-      el.textContent = end;
-      return;
-    }
-
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      var progress = Math.min((timestamp - startTime) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      var current = Math.round(eased * numericEnd);
-      el.textContent = prefix + current + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-
-  var trustValues = document.querySelectorAll('.hero__trust-value');
-  var hasAnimated = false;
-
-  function checkTrustVisible() {
-    if (hasAnimated) return;
-    var trustSection = document.querySelector('.hero__trust');
-    if (!trustSection) return;
-    var rect = trustSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      hasAnimated = true;
-      trustValues.forEach(function (el) {
-        if (el.hasAttribute('data-no-animate')) return;
-        var text = el.textContent;
-        animateValue(el, text, 800);
-      });
-    }
-  }
-
-  window.addEventListener('scroll', checkTrustVisible, { passive: true });
-  // Run once on load
-  setTimeout(checkTrustVisible, 200);
 
 })();

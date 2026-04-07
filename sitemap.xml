@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    SITEMAP for Redwood Real Estate Solutions
+    ==========================================
+    SEO AGENT: Update this file whenever you add new blog posts or pages.
+    Priority: 1.0 = homepage, 0.8 = key landing pages, 0.7 = blog posts
+    Changefreq: homepage = weekly, blog posts = monthly
+  -->
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.redwood-realestate.com/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!--
+    BLOG POSTS
+    ==========
+    Add new blog post URLs here as they are published.
+    Follow this format:
+
+    <url>
+      <loc>https://www.redwood-realestate.com/blog/your-post-slug.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  -->
+
+  <!-- Blog: How to Sell Your House Fast in Sacramento -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/how-to-sell-house-fast-sacramento.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: How to Avoid Foreclosure in Sacramento -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/avoid-foreclosure-sacramento.html</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Inherited a House in California -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/sell-inherited-house-california.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Sacramento Housing Market Update 2026 -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/sacramento-housing-market-update-2026.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Cash Buyers vs Real Estate Agents -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/cash-buyer-vs-real-estate-agent.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Sell House with Code Violations -->
+  <url>
+    <loc>https://www.redwood-realestate.com/blog/sell-house-code-violations-california.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

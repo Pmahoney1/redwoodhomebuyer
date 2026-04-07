@@ -1,0 +1,19 @@
+# Robots.txt for Redwood Real Estate Solutions
+# https://www.redwood-realestate.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.redwood-realestate.com/sitemap.xml
+
+# Allow all search engines to crawl all content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block access to any admin or system directories (add as needed)
+# Disallow: /admin/
+# Disallow: /private/
