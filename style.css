@@ -514,10 +514,11 @@
 
 .hero__subtitle {
   font-size: var(--text-base);
-  color: var(--color-text-muted);
+  color: var(--color-text);
   margin-bottom: var(--space-8);
   line-height: 1.7;
   max-width: 52ch;
+  opacity: 0.9;
 }
 
 .hero__actions {
