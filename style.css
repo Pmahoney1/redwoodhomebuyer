@@ -1,7 +1,7 @@
 /* ============================================
    Redwood Real Estate Solutions — Design Tokens
-   Art Direction: Warm, trustworthy, grounded
-   Palette: Deep redwood + warm earth tones
+   Art Direction: Nature-inspired, warm, inviting
+   Palette: Forest greens + warm earth + golden light
    ============================================ */
 
 :root {
@@ -52,93 +52,94 @@
 }
 
 /* ============================================
-   Light Mode (Default) — Warm Earth Tones
+   Light Mode (Default) — Nature-Inspired Warm Palette
+   Forest greens, warm ambers, soft earth
    ============================================ */
 :root,
 [data-theme='light'] {
-  --color-bg: #FAF8F5;
+  --color-bg: #F8F6F0;
   --color-surface: #FFFFFF;
-  --color-surface-2: #F5F1EC;
-  --color-surface-offset: #EDE8E1;
-  --color-divider: #DDD6CC;
-  --color-border: #D1C9BE;
+  --color-surface-2: #F0EDE4;
+  --color-surface-offset: #E8E4DA;
+  --color-divider: #D6D0C4;
+  --color-border: #C9C2B4;
 
-  --color-text: #2C2419;
-  --color-text-muted: #6B5D4F;
-  --color-text-faint: #A99E90;
-  --color-text-inverse: #FAF8F5;
+  --color-text: #2A2A22;
+  --color-text-muted: #5E5B4E;
+  --color-text-faint: #9A9585;
+  --color-text-inverse: #FAFAF5;
 
-  --color-primary: #8B2E1B;
-  --color-primary-hover: #6F2416;
-  --color-primary-active: #541B10;
-  --color-primary-light: #F2DDD8;
+  --color-primary: #3A6B4A;
+  --color-primary-hover: #2D5639;
+  --color-primary-active: #21412B;
+  --color-primary-light: #DFF0E4;
 
-  --color-accent: #2D6A4F;
-  --color-accent-hover: #1F4E39;
+  --color-accent: #C17D2E;
+  --color-accent-hover: #A66822;
 
-  --color-warning: #964219;
-  --color-success: #2D6A4F;
+  --color-warning: #B8762A;
+  --color-success: #3A6B4A;
 
-  --shadow-sm: 0 1px 2px oklch(0.2 0.02 60 / 0.06);
-  --shadow-md: 0 4px 12px oklch(0.2 0.02 60 / 0.08);
-  --shadow-lg: 0 12px 32px oklch(0.2 0.02 60 / 0.12);
+  --shadow-sm: 0 1px 2px oklch(0.25 0.02 80 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.25 0.02 80 / 0.08);
+  --shadow-lg: 0 12px 32px oklch(0.25 0.02 80 / 0.12);
 }
 
 /* ============================================
-   Dark Mode
+   Dark Mode — Deep Forest Night
    ============================================ */
 [data-theme='dark'] {
-  --color-bg: #1A1613;
-  --color-surface: #221E1A;
-  --color-surface-2: #2A2520;
-  --color-surface-offset: #1E1A16;
-  --color-divider: #342E28;
-  --color-border: #3E372F;
+  --color-bg: #161A15;
+  --color-surface: #1C211B;
+  --color-surface-2: #222821;
+  --color-surface-offset: #1A1E18;
+  --color-divider: #2E342C;
+  --color-border: #3A4037;
 
-  --color-text: #D9D0C5;
-  --color-text-muted: #8A7E72;
-  --color-text-faint: #5E554C;
-  --color-text-inverse: #1A1613;
+  --color-text: #D5D3C8;
+  --color-text-muted: #8A8B7C;
+  --color-text-faint: #5C5D52;
+  --color-text-inverse: #161A15;
 
-  --color-primary: #D4735E;
-  --color-primary-hover: #B85D4A;
-  --color-primary-active: #A04E3D;
-  --color-primary-light: #3A2822;
+  --color-primary: #6DBF82;
+  --color-primary-hover: #55A66A;
+  --color-primary-active: #408F54;
+  --color-primary-light: #1E2E22;
 
-  --color-accent: #5AAF82;
-  --color-accent-hover: #47946D;
+  --color-accent: #D9A55A;
+  --color-accent-hover: #C49244;
 
-  --color-warning: #BB653B;
-  --color-success: #5AAF82;
+  --color-warning: #D4943E;
+  --color-success: #6DBF82;
 
-  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
-  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.45);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --color-bg: #1A1613;
-    --color-surface: #221E1A;
-    --color-surface-2: #2A2520;
-    --color-surface-offset: #1E1A16;
-    --color-divider: #342E28;
-    --color-border: #3E372F;
-    --color-text: #D9D0C5;
-    --color-text-muted: #8A7E72;
-    --color-text-faint: #5E554C;
-    --color-text-inverse: #1A1613;
-    --color-primary: #D4735E;
-    --color-primary-hover: #B85D4A;
-    --color-primary-active: #A04E3D;
-    --color-primary-light: #3A2822;
-    --color-accent: #5AAF82;
-    --color-accent-hover: #47946D;
-    --color-warning: #BB653B;
-    --color-success: #5AAF82;
-    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
-    --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
-    --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+    --color-bg: #161A15;
+    --color-surface: #1C211B;
+    --color-surface-2: #222821;
+    --color-surface-offset: #1A1E18;
+    --color-divider: #2E342C;
+    --color-border: #3A4037;
+    --color-text: #D5D3C8;
+    --color-text-muted: #8A8B7C;
+    --color-text-faint: #5C5D52;
+    --color-text-inverse: #161A15;
+    --color-primary: #6DBF82;
+    --color-primary-hover: #55A66A;
+    --color-primary-active: #408F54;
+    --color-primary-light: #1E2E22;
+    --color-accent: #D9A55A;
+    --color-accent-hover: #C49244;
+    --color-warning: #D4943E;
+    --color-success: #6DBF82;
+    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+    --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+    --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.45);
   }
 }
 
@@ -401,22 +402,81 @@
   object-fit: cover;
 }
 
+/* Slideshow images */
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  will-change: opacity;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ken Burns subtle zoom on active slide */
+.hero__slide.is-active img {
+  animation: kenBurns 6s ease-in-out forwards;
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
 .hero__bg::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     135deg,
-    oklch(from var(--color-bg) l c h / 0.92) 0%,
-    oklch(from var(--color-bg) l c h / 0.75) 50%,
-    oklch(from var(--color-bg) l c h / 0.55) 100%
+    oklch(from var(--color-bg) l c h / 0.88) 0%,
+    oklch(from var(--color-bg) l c h / 0.68) 50%,
+    oklch(from var(--color-bg) l c h / 0.45) 100%
   );
+}
+
+/* Slide progress indicator */
+.hero__progress {
+  position: absolute;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 2;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.hero__progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: oklch(from var(--color-text) l c h / 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.hero__progress-dot.is-active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--color-primary);
 }
 
 .hero__inner {
   max-width: var(--content-wide);
   margin-inline: auto;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .hero__content {
@@ -862,7 +922,7 @@
   display: flex;
   gap: 2px;
   margin-bottom: var(--space-4);
-  color: #D4A32A;
+  color: var(--color-accent);
 }
 
 .testimonial-card__stars svg {

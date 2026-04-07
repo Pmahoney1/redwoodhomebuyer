@@ -114,10 +114,12 @@
     <div class="header__inner">
       <a href="#" class="logo" aria-label="Redwood Real Estate Solutions — home">
         <svg class="logo__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <rect width="36" height="36" rx="8" fill="currentColor" opacity="0.08"/>
-          <path d="M18 6L8 16v12a2 2 0 002 2h6v-8h4v8h6a2 2 0 002-2V16L18 6z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M13 18h10" stroke="var(--color-text-inverse)" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M18 13v10" stroke="var(--color-text-inverse)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <rect width="36" height="36" rx="8" fill="var(--color-primary)" opacity="0.1"/>
+          <path d="M18 4c-1.5 3-5 5-5 10a5 5 0 0010 0c0-5-3.5-7-5-10z" fill="var(--color-primary)" opacity="0.3"/>
+          <path d="M18 8c-1 2-3.5 3.5-3.5 7a3.5 3.5 0 007 0c0-3.5-2.5-5-3.5-7z" fill="var(--color-primary)"/>
+          <path d="M18 15v13" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M15 20h6" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <path d="M10 30h16" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <div class="logo__text">Redwood<span>Real Estate Solutions</span></div>
       </a>
@@ -167,7 +169,24 @@
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__bg">
-        <img src="./assets/hero-home.jpg" alt="Suburban home exterior with green lawn and blue sky" width="800" height="533" loading="eager">
+        <div class="hero__slide is-active">
+          <img src="./assets/hero-slide-1.jpg" alt="Tree-lined suburban street in Northern California neighborhood" width="1000" height="667" loading="eager">
+        </div>
+        <div class="hero__slide">
+          <img src="./assets/hero-slide-2.jpg" alt="Beautiful Napa Valley area home with lush landscaping" width="1600" height="894" loading="eager">
+        </div>
+        <div class="hero__slide">
+          <img src="./assets/hero-slide-3.jpg" alt="Aerial view of residential neighborhood in Redwood City, San Francisco Bay Area" width="1300" height="956" loading="eager">
+        </div>
+        <div class="hero__slide">
+          <img src="./assets/hero-slide-4.jpg" alt="Beautiful tree-lined sidewalk in Northern California suburban community" width="612" height="408" loading="eager">
+        </div>
+        <div class="hero__progress" aria-label="Image slideshow navigation">
+          <button class="hero__progress-dot is-active" aria-label="Slide 1" data-slide="0"></button>
+          <button class="hero__progress-dot" aria-label="Slide 2" data-slide="1"></button>
+          <button class="hero__progress-dot" aria-label="Slide 3" data-slide="2"></button>
+          <button class="hero__progress-dot" aria-label="Slide 4" data-slide="3"></button>
+        </div>
       </div>
       <div class="hero__inner">
         <div class="hero__content">
@@ -627,9 +646,11 @@
       <div class="footer__brand">
         <a href="#" class="logo" aria-label="Redwood Real Estate Solutions">
           <svg class="logo__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-            <rect width="36" height="36" rx="8" fill="currentColor" opacity="0.08"/>
-            <path d="M18 6L8 16v12a2 2 0 002 2h6v-8h4v8h6a2 2 0 002-2V16L18 6z" fill="var(--color-primary)" stroke="var(--color-primary)" stroke-width="1.5" stroke-linejoin="round"/>
-            <path d="M13 18h10" stroke="var(--color-text-inverse)" stroke-width="1.5" stroke-linecap="round"/>
+            <rect width="36" height="36" rx="8" fill="var(--color-primary)" opacity="0.1"/>
+            <path d="M18 4c-1.5 3-5 5-5 10a5 5 0 0010 0c0-5-3.5-7-5-10z" fill="var(--color-primary)" opacity="0.3"/>
+            <path d="M18 8c-1 2-3.5 3.5-3.5 7a3.5 3.5 0 007 0c0-3.5-2.5-5-3.5-7z" fill="var(--color-primary)"/>
+            <path d="M18 15v13" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 30h16" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
           <div class="logo__text">Redwood<span>Real Estate Solutions</span></div>
         </a>

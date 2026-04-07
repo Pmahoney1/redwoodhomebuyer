@@ -29,6 +29,41 @@
       : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
 
+  // ---- Hero Image Slideshow ----
+  var slides = document.querySelectorAll('.hero__slide');
+  var dots = document.querySelectorAll('.hero__progress-dot');
+  var currentSlide = 0;
+  var slideInterval = null;
+  var SLIDE_DURATION = 5000; // 5 seconds per slide
+
+  function goToSlide(index) {
+    slides.forEach(function (s) { s.classList.remove('is-active'); });
+    dots.forEach(function (d) { d.classList.remove('is-active'); });
+    currentSlide = index;
+    if (slides[currentSlide]) slides[currentSlide].classList.add('is-active');
+    if (dots[currentSlide]) dots[currentSlide].classList.add('is-active');
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }
+
+  function startSlideshow() {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, SLIDE_DURATION);
+  }
+
+  if (slides.length > 1) {
+    startSlideshow();
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        var idx = parseInt(this.getAttribute('data-slide'), 10);
+        goToSlide(idx);
+        startSlideshow(); // Reset timer
+      });
+    });
+  }
+
   // ---- Header Scroll State ----
   var header = document.querySelector('.header');
   if (header) {
