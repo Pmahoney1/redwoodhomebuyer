@@ -202,6 +202,53 @@
     document.getElementById('form-success')
   );
 
+  // ---- Situations Photo Carousel ----
+  (function initSituationsCarousel() {
+    var carousel = document.querySelector('.situations-carousel');
+    if (!carousel) return;
+
+    var slides = carousel.querySelectorAll('.situations-carousel__slide');
+    var dotsContainer = carousel.querySelector('.situations-carousel__dots');
+    var prevBtn = carousel.querySelector('.situations-carousel__btn--prev');
+    var nextBtn = carousel.querySelector('.situations-carousel__btn--next');
+    var current = 0;
+    var autoTimer = null;
+    var AUTO_INTERVAL = 4000;
+
+    // Build dot indicators
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'situations-carousel__dot' + (i === 0 ? ' situations-carousel__dot--active' : '');
+      dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); resetAuto(); });
+      dotsContainer.appendChild(dot);
+    });
+
+    var dots = dotsContainer.querySelectorAll('.situations-carousel__dot');
+
+    function goTo(index) {
+      slides[current].classList.remove('situations-carousel__slide--active');
+      dots[current].classList.remove('situations-carousel__dot--active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('situations-carousel__slide--active');
+      dots[current].classList.add('situations-carousel__dot--active');
+    }
+
+    function resetAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(function () { goTo(current + 1); }, AUTO_INTERVAL);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', function () { if (autoTimer) clearInterval(autoTimer); });
+    carousel.addEventListener('mouseleave', resetAuto);
+
+    resetAuto();
+  })();
+
   // ---- Smooth Scroll for Anchor Links ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
