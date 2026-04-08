@@ -791,17 +791,17 @@
   object-fit: cover;
 }
 
-/* Situations Carousel */
+/* Situations Carousel — matches original .situations-image layout */
 .situations-carousel {
   border-radius: var(--radius-xl);
   overflow: hidden;
   position: relative;
+  aspect-ratio: 4/3;
 }
 
 .situations-carousel__track {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
 }
 
 .situations-carousel__slide {
@@ -826,64 +826,64 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: var(--space-6) var(--space-6) var(--space-5);
-  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  padding: var(--space-8) var(--space-6) var(--space-5);
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
   font-family: var(--font-display);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 600;
   color: #fff;
   letter-spacing: 0.02em;
 }
 
 .situations-carousel__controls {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--space-3);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-4);
-  padding: var(--space-4) var(--space-4);
-  background: var(--surface);
+  gap: 6px;
+  z-index: 2;
 }
 
 .situations-carousel__btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
+  border: none;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
+  backdrop-filter: blur(4px);
 }
 
 .situations-carousel__btn:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: rgba(109, 191, 130, 0.08);
+  background: rgba(0,0,0,0.7);
 }
 
 .situations-carousel__dots {
   display: flex;
-  gap: 8px;
+  gap: 5px;
   align-items: center;
 }
 
 .situations-carousel__dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   border: none;
-  background: var(--border);
+  background: rgba(255,255,255,0.4);
   cursor: pointer;
   transition: all 0.25s ease;
   padding: 0;
 }
 
 .situations-carousel__dot--active {
-  background: var(--primary);
-  width: 24px;
+  background: #fff;
+  width: 18px;
   border-radius: 4px;
 }
 
