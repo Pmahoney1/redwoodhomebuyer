@@ -1,0 +1,468 @@
+/* ============================================
+   Inner Page Styles — Redwood Real Estate Solutions
+   Shared across all non-homepage pages
+   ============================================ */
+
+/* ── Breadcrumb ────────────────────────────── */
+.breadcrumb {
+  padding: var(--space-4) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+.breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+.breadcrumb a:hover { color: var(--color-primary); }
+.breadcrumb__sep { margin: 0 var(--space-2); opacity: 0.5; }
+.breadcrumb [aria-current="page"] { color: var(--color-text); font-weight: 500; }
+
+/* ── Page Hero (inner pages) ───────────────── */
+.page-hero {
+  padding: var(--space-16) 0 var(--space-12);
+  text-align: center;
+}
+.page-hero__content { max-width: 800px; margin: 0 auto; }
+.page-hero__overline {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+.page-hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ── Active Nav ────────────────────────────── */
+.nav__links a.is-active { color: var(--color-primary); }
+
+/* ── Offer Formula ─────────────────────────── */
+.offer-formula { max-width: 640px; margin: 0 auto; }
+.formula-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.formula-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.formula-row:last-child { border-bottom: none; }
+.formula-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  min-width: 180px;
+}
+.formula-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: right;
+}
+.formula-row--minus .formula-label::before {
+  content: '−  ';
+  color: var(--color-accent);
+}
+.formula-row--result {
+  background: var(--color-primary);
+  margin: var(--space-4) calc(-1 * var(--space-6)) calc(-1 * var(--space-6));
+  padding: var(--space-5) var(--space-6);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  border-bottom: none;
+}
+.formula-row--result .formula-label { color: white; font-size: var(--text-lg); }
+.formula-row--result .formula-desc { color: rgba(255,255,255,0.8); }
+.formula-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Process (detailed, inner page) ────────── */
+.process-grid--detailed .process-step {
+  text-align: left;
+}
+.process-step__details {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-3);
+}
+.process-step__details li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-1) 0;
+  padding-left: var(--space-5);
+  position: relative;
+}
+.process-step__details li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ── Areas Grid ────────────────────────────── */
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+.area-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  text-decoration: none;
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+.area-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.area-card__city {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+.area-card__county {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+.area-card__stats {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+.area-card__link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.additional-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: center;
+}
+.additional-areas span {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ── City Page Layout ──────────────────────── */
+.city-content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-12);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .city-content { grid-template-columns: 1fr; }
+}
+.city-content__main h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: var(--space-8) 0 var(--space-4);
+}
+.city-content__main h2:first-child { margin-top: 0; }
+.city-content__main h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--space-6) 0 var(--space-3);
+}
+.city-content__main p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-4);
+}
+.city-benefits {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0;
+}
+.city-benefits li {
+  padding: var(--space-3) 0;
+  padding-left: var(--space-6);
+  position: relative;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.city-benefits li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+.city-benefits li strong { color: var(--color-text); }
+.situations-list--compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+}
+
+/* City sidebar */
+.city-stats-card, .city-process-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+.city-stats-card__title, .city-process-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+.city-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+}
+.city-stat__label { color: var(--color-text-muted); }
+.city-stat__value { color: var(--color-text); font-weight: 500; }
+.mini-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.mini-step__num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.city-sidebar-cta {
+  display: block;
+  text-align: center;
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: var(--space-4);
+  transition: opacity var(--transition-interactive);
+}
+.city-sidebar-cta:hover { opacity: 0.9; }
+
+/* ── Blog Post ─────────────────────────────── */
+.blog-post__header {
+  padding: var(--space-12) 0 var(--space-8);
+  text-align: center;
+}
+.blog-post__category {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.blog-post__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-post__meta {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.blog-post__body {
+  padding-bottom: var(--space-16);
+}
+.blog-post__body h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: var(--space-10) 0 var(--space-4);
+}
+.blog-post__body h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: var(--space-8) 0 var(--space-3);
+}
+.blog-post__body p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+.blog-post__body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.blog-post__body a:hover { opacity: 0.8; }
+.blog-post__body ul, .blog-post__body ol {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+.blog-post__body li {
+  margin-bottom: var(--space-2);
+}
+.blog-post__body li strong { color: var(--color-text); }
+
+/* ── Testimonials Full Grid ────────────────── */
+.testimonials-grid--full {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+.testimonial-card__location {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 640px) {
+  .page-hero { padding: var(--space-10) 0 var(--space-8); }
+  .page-hero__title { font-size: var(--text-xl); }
+  .areas-grid { grid-template-columns: 1fr; }
+  .testimonials-grid--full { grid-template-columns: 1fr; }
+  .formula-label { min-width: auto; }
+  .formula-row { flex-direction: column; gap: var(--space-1); }
+  .formula-desc { text-align: left; }
+  .blog-post__meta { flex-direction: column; align-items: center; gap: var(--space-2); }
+}
+
+/* ---- City Sidebar Form ---- */
+.city-sidebar-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+}
+.city-sidebar-form__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.25rem;
+}
+.city-sidebar-form__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem;
+}
+.city-sidebar-form .form-group {
+  margin-bottom: 0.75rem;
+}
+.city-sidebar-form .form-group label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+.city-sidebar-form .form-group input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.city-sidebar-form .form-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99,66,26,0.12);
+}
+.city-sidebar-form .form-submit {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-on-primary);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background 0.2s, transform 0.1s;
+}
+.city-sidebar-form .form-submit:hover {
+  background: var(--color-primary-hover);
+}
+.city-sidebar-form .form-submit:active {
+  background: var(--color-primary-active);
+  transform: translateY(1px);
+}
+.city-sidebar-form .form-disclaimer {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 0.6rem;
+}

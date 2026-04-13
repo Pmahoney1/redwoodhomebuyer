@@ -9,7 +9,7 @@
   // ---- Dark Mode Toggle ----
   const toggle = document.querySelector('[data-theme-toggle]');
   const root = document.documentElement;
-  let theme = 'dark';
+  let theme = 'light';
   root.setAttribute('data-theme', theme);
   updateToggleIcon();
 
@@ -131,7 +131,7 @@
   // ---- Lead Form Submission ----
   // Sends data to Go High Level via webhook
   // Handles both hero form and bottom CTA form
-  var GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
+  var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/hAn3NSY8VVa624DIvOpZ/webhook-trigger/d6a7abd8-9134-4f20-92ad-93e4f1d4cc5d';
 
   function handleFormSubmit(formEl, successEl) {
     if (!formEl) return;
@@ -152,24 +152,23 @@
 
       if (!isValid) return;
 
-      // Prepare form data for Go High Level webhook
-      var formData = new FormData();
-      formData.append('full_name', formEl.querySelector('[name="full_name"]').value.trim());
-      formData.append('property_address', formEl.querySelector('[name="property_address"]').value.trim());
-      formData.append('email', formEl.querySelector('[name="email"]').value.trim());
-      formData.append('phone', formEl.querySelector('[name="phone"]').value.trim());
-      formData.append('source', 'Redwood Real Estate Website');
+      // Prepare form data for Go High Level webhook (JSON format)
+      var payload = {
+        full_name: formEl.querySelector('[name="full_name"]').value.trim(),
+        property_address: formEl.querySelector('[name="property_address"]').value.trim(),
+        email: formEl.querySelector('[name="email"]').value.trim(),
+        phone: formEl.querySelector('[name="phone"]').value.trim(),
+        source: 'Redwood Real Estate Website'
+      };
 
       // Send to Go High Level webhook
-      // Replace YOUR_GHL_WEBHOOK_URL with your actual Go High Level inbound webhook URL
-      if (GHL_WEBHOOK_URL !== 'YOUR_GHL_WEBHOOK_URL') {
-        fetch(GHL_WEBHOOK_URL, {
-          method: 'POST',
-          body: formData,
-        }).catch(function (err) {
-          console.log('Webhook delivery attempted:', err);
-        });
-      }
+      fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch(function (err) {
+        console.log('Webhook delivery attempted:', err);
+      });
 
       // Show success state
       formEl.style.display = 'none';
@@ -201,6 +200,17 @@
     document.getElementById('offer-form'),
     document.getElementById('form-success')
   );
+  // Inner page forms (dynamically find any form with id starting with 'offer-form-')
+  document.querySelectorAll('form[id^="offer-form-"]').forEach(function(form) {
+    var successId = form.id + '-success';
+    var successEl = document.getElementById(successId);
+    if (!successEl) {
+      // Try parent's success element
+      var parent = form.closest('.lead-form');
+      if (parent) successEl = parent.querySelector('.form-success');
+    }
+    handleFormSubmit(form, successEl);
+  });
 
   // ---- Situations Photo Carousel ----
   (function initSituationsCarousel() {

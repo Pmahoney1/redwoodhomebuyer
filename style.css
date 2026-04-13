@@ -69,16 +69,16 @@
   --color-text-faint: #9A9585;
   --color-text-inverse: #FAFAF5;
 
-  --color-primary: #3A6B4A;
-  --color-primary-hover: #2D5639;
-  --color-primary-active: #21412B;
-  --color-primary-light: #DFF0E4;
+  --color-primary: #63421A;
+  --color-primary-hover: #522F0E;
+  --color-primary-active: #421F06;
+  --color-primary-light: #F0E8D8;
 
   --color-accent: #C17D2E;
   --color-accent-hover: #A66822;
 
   --color-warning: #B8762A;
-  --color-success: #3A6B4A;
+  --color-success: #63421A;
 
   --shadow-sm: 0 1px 2px oklch(0.25 0.02 80 / 0.06);
   --shadow-md: 0 4px 12px oklch(0.25 0.02 80 / 0.08);
@@ -193,21 +193,22 @@
 }
 
 .logo__icon {
-  width: 36px;
-  height: 36px;
+  width: 46px;
+  height: 32px;
   flex-shrink: 0;
 }
 
 .logo__text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-sm);
-  line-height: 1.2;
+  font-size: var(--text-base);
+  line-height: 1;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .logo__text span {
-  display: block;
+  display: inline;
   color: var(--color-primary);
 }
 
@@ -444,6 +445,16 @@
   );
 }
 
+/* Light mode: reduce overlay so hero photos are more visible */
+[data-theme='light'] .hero__bg::after {
+  background: linear-gradient(
+    135deg,
+    oklch(from var(--color-bg) l c h / 0.70) 0%,
+    oklch(from var(--color-bg) l c h / 0.48) 50%,
+    oklch(from var(--color-bg) l c h / 0.25) 100%
+  );
+}
+
 /* Slide progress indicator */
 .hero__progress {
   position: absolute;
@@ -563,6 +574,17 @@
   line-height: 1.7;
   max-width: 52ch;
   opacity: 0.9;
+}
+
+/* Light mode: full opacity + heavier weight for hero text legibility */
+[data-theme='light'] .hero__subtitle {
+  opacity: 1;
+  font-weight: 500;
+}
+
+[data-theme='light'] .hero__badge {
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .hero__actions {
@@ -931,7 +953,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-4);
-  max-width: var(--content-wide);
+  max-width: 680px;
   margin-inline: auto;
 }
 
@@ -943,7 +965,8 @@
 
 @media (min-width: 1024px) {
   .properties-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 760px;
   }
 }
 
