@@ -4,8 +4,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
 Sitemap: https://www.redwoodhomebuyer.com/sitemap.xml
+Sitemap: https://www.redwoodhomebuyer.com/sitemap-foreclosure.xml
 
 # Allow all search engines to crawl all content
 User-agent: Googlebot
