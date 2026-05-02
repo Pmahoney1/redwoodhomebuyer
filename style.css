@@ -1911,35 +1911,39 @@
 /* ============================================
    Scroll Reveal Animations
    ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .fade-in {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in.is-visible {
-  opacity: 1;
-  transform: none;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 /* Stagger children in grids */
-.fade-in:nth-child(2) { transition-delay: 0.1s; }
-.fade-in:nth-child(3) { transition-delay: 0.2s; }
-.fade-in:nth-child(4) { transition-delay: 0.25s; }
-.fade-in:nth-child(5) { transition-delay: 0.3s; }
-.fade-in:nth-child(6) { transition-delay: 0.35s; }
-
-/* After reveal animation completes, clear transition so card hover effects work */
-.fade-in.is-done {
-  transition: none;
-}
+.fade-in.is-visible:nth-child(2) { animation-delay: 0.1s; }
+.fade-in.is-visible:nth-child(3) { animation-delay: 0.2s; }
+.fade-in.is-visible:nth-child(4) { animation-delay: 0.25s; }
+.fade-in.is-visible:nth-child(5) { animation-delay: 0.3s; }
+.fade-in.is-visible:nth-child(6) { animation-delay: 0.35s; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .fade-in {
     opacity: 1;
-    transform: none;
-    transition: none;
+  }
+  .fade-in.is-visible {
+    animation: none;
   }
 }
 
