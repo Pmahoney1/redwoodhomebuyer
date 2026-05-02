@@ -422,7 +422,13 @@
   object-fit: cover;
 }
 
-/* Ken Burns subtle zoom on active slide */
+/* Ken Burns subtle zoom on active slide.
+   Resting state is scale(1.06) so when the animation is removed
+   on slide-out, there's no visible snap-back while fading. */
+.hero__slide img {
+  transform: scale(1.06);
+}
+
 .hero__slide.is-active img {
   animation: kenBurns 6s ease-in-out forwards;
 }

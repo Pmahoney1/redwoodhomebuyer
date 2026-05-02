@@ -34,7 +34,7 @@
   var dots = document.querySelectorAll('.hero__progress-dot');
   var currentSlide = 0;
   var slideInterval = null;
-  var SLIDE_DURATION = 5000; // 5 seconds per slide
+  var SLIDE_DURATION = 6000; // 6 seconds per slide
 
   function goToSlide(index) {
     slides.forEach(function (s) { s.classList.remove('is-active'); });
