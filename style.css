@@ -243,6 +243,27 @@
   color: var(--color-primary);
 }
 
+.nav__phone {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-interactive);
+}
+
+.nav__phone:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .nav__phone {
+    display: inline-flex;
+  }
+}
+
 .nav__cta {
   display: none;
   padding: var(--space-2) var(--space-5);
@@ -1898,7 +1919,7 @@
 
 .fade-in.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Stagger children in grids */
@@ -1907,6 +1928,11 @@
 .fade-in:nth-child(4) { transition-delay: 0.25s; }
 .fade-in:nth-child(5) { transition-delay: 0.3s; }
 .fade-in:nth-child(6) { transition-delay: 0.35s; }
+
+/* After reveal animation completes, clear transition so card hover effects work */
+.fade-in.is-done {
+  transition: none;
+}
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {

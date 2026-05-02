@@ -278,6 +278,10 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          entry.target.addEventListener('transitionend', function handler() {
+            entry.target.classList.add('is-done');
+            entry.target.removeEventListener('transitionend', handler);
+          });
           revealObserver.unobserve(entry.target);
         }
       });
@@ -285,7 +289,10 @@
 
     fadeEls.forEach(function (el) { revealObserver.observe(el); });
   } else {
-    fadeEls.forEach(function (el) { el.classList.add('is-visible'); });
+    fadeEls.forEach(function (el) {
+      el.classList.add('is-visible');
+      el.classList.add('is-done');
+    });
   }
 
 })();
