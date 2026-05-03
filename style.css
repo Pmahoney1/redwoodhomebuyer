@@ -755,8 +755,8 @@
 }
 
 .process-step:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.02);
 }
 
 .process-step__number {
@@ -989,8 +989,8 @@
 }
 
 .property-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px) scale(1.03);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.03);
 }
 
 .property-card__icon {
@@ -1039,8 +1039,8 @@
 }
 
 .benefit-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.02);
   border-color: oklch(from var(--color-primary) l c h / 0.3);
 }
 
@@ -1890,15 +1890,9 @@
 /* ============================================
    Scroll Reveal Animations
    ============================================ */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .fade-in {
@@ -1906,15 +1900,15 @@
 }
 
 .fade-in.is-visible {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* Stagger children in grids */
-.fade-in.is-visible:nth-child(2) { animation-delay: 0.1s; }
-.fade-in.is-visible:nth-child(3) { animation-delay: 0.2s; }
-.fade-in.is-visible:nth-child(4) { animation-delay: 0.25s; }
-.fade-in.is-visible:nth-child(5) { animation-delay: 0.3s; }
-.fade-in.is-visible:nth-child(6) { animation-delay: 0.35s; }
+.fade-in.is-visible:nth-child(2) { animation-delay: 0.08s; }
+.fade-in.is-visible:nth-child(3) { animation-delay: 0.16s; }
+.fade-in.is-visible:nth-child(4) { animation-delay: 0.24s; }
+.fade-in.is-visible:nth-child(5) { animation-delay: 0.32s; }
+.fade-in.is-visible:nth-child(6) { animation-delay: 0.4s; }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
