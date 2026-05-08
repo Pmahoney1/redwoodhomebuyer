@@ -180,6 +180,7 @@
           event_category: 'form',
           event_label: 'cash_offer_request'
         });
+        gtag('event', 'conversion', {'send_to': 'AW-16671004696/UTPbCPXV9cwZEJiwrY0-'});
       }
       if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
