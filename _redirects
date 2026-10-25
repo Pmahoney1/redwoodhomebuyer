@@ -1,5 +1,0 @@
-# Canonical host: always https://www.redwoodhomebuyer.com
-https://redwoodhomebuyer.com/* https://www.redwoodhomebuyer.com/:splat 301
-http://redwoodhomebuyer.com/* https://www.redwoodhomebuyer.com/:splat 301
-http://www.redwoodhomebuyer.com/* https://www.redwoodhomebuyer.com/:splat 301
-/index.html / 301
