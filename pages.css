@@ -303,7 +303,7 @@
 /* ── Blog Post ─────────────────────────────── */
 .blog-post__header {
   padding: var(--space-12) 0 var(--space-8);
-  text-align: center;
+  text-align: left; /* Oct 27 2026: headline and byline align with the body text (Patrick) */
 }
 .blog-post__category {
   display: inline-block;
@@ -322,13 +322,13 @@
   color: var(--color-text);
   margin-bottom: var(--space-4);
   max-width: 800px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 .blog-post__meta {
   display: flex;
   gap: var(--space-4);
-  justify-content: center;
+  justify-content: flex-start;
   font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
@@ -390,7 +390,7 @@
   .formula-label { min-width: auto; }
   .formula-row { flex-direction: column; gap: var(--space-1); }
   .formula-desc { text-align: left; }
-  .blog-post__meta { flex-direction: column; align-items: center; gap: var(--space-2); }
+  .blog-post__meta { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
 }
 
 /* ---- City Sidebar Form ---- */
